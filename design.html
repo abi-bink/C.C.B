@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Design Studio | Arnie Brown</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+
+  <header class="site-header">
+    <div class="container nav-wrap">
+
+      <a class="brand" href="index.html">
+        <span class="brand-mark">AB</span>
+
+        <span class="brand-copy">
+          <strong>Arnie Brown</strong>
+          <small>Custom Car Badges</small>
+        </span>
+      </a>
+
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="design.html" class="active-nav">Design Studio</a>
+        <a href="index.html#contact" class="nav-cta">Contact</a>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <main>
+
+    <section class="design-hero">
+
+      <div class="container">
+
+        <p class="eyebrow">
+          Custom Design Studio
+        </p>
+
+        <h1>
+          Create Your Badge
+        </h1>
+
+        <p class="design-intro">
+          Experiment with shape, colour, finish and wording to create
+          a simple concept for your custom badge.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <section class="designer-section">
+
+      <div class="container designer-layout">
+
+        <!-- CONTROLS -->
+
+        <div class="designer-controls">
+
+          <h2>Design Options</h2>
+
+
+          <div class="designer-group">
+
+            <label>Shape</label>
+
+            <div class="designer-button-row">
+
+              <button class="shape-button active" data-shape="round">
+                Round
+              </button>
+
+              <button class="shape-button" data-shape="oval">
+                Oval
+              </button>
+
+              <button class="shape-button" data-shape="rectangle">
+                Rectangle
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <div class="designer-group">
+
+            <label for="badge-text">
+              Badge Text
+            </label>
+
+            <input
+              id="badge-text"
+              type="text"
+              value="YOUR CLUB"
+              maxlength="24"
+            >
+
+          </div>
+
+
+          <div class="designer-group">
+
+            <label for="background-colour">
+              Background Colour
+            </label>
+
+            <input
+              id="background-colour"
+              type="color"
+              value="#0b2a4a"
+            >
+
+          </div>
+
+
+          <div class="designer-group">
+
+            <label for="text-colour">
+              Text Colour
+            </label>
+
+            <input
+              id="text-colour"
+              type="color"
+              value="#ffffff"
+            >
+
+          </div>
+
+
+          <div class="designer-group">
+
+            <label for="metal-colour">
+              Metal Finish
+            </label>
+
+            <select id="metal-colour">
+
+              <option value="#d7dce2">
+                Chrome
+              </option>
+
+              <option value="#c9a86a">
+                Gold
+              </option>
+
+              <option value="#252525">
+                Black
+              </option>
+
+              <option value="#9c6d3c">
+                Brass
+              </option>
+
+            </select>
+
+          </div>
+
+        </div>
+
+
+        <!-- LIVE PREVIEW -->
+
+        <div class="designer-preview-panel">
+
+          <p class="eyebrow">
+            Live Preview
+          </p>
+
+          <div class="badge-stage">
+
+            <div
+              id="badge-preview"
+              class="badge-preview round"
+            >
+
+              <div class="badge-inner">
+
+                <span id="badge-preview-text">
+                  YOUR CLUB
+                </span>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <p class="preview-note">
+            This is a concept preview only. Final artwork and production
+            details will be confirmed before manufacturing.
+          </p>
+
+          <a
+            href="index.html#contact"
+            class="button button-primary"
+          >
+            Request a Quote
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer class="site-footer">
+
+    <div class="container footer-row">
+
+      <div>
+        <strong>Arnie Brown</strong>
+        <p>Custom Car Badges</p>
+      </div>
+
+      <div class="footer-right">
+        <a href="index.html">Return Home</a>
+      </div>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>

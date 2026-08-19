@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ADAC Deutschland Car Grille Badge | C.C.B</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* PRODUCT PAGE */
+
+    .product-page-section {
+      padding: 70px 0 110px;
+      background: #f6f7f9;
+      color: #111827;
+      min-height: 80vh;
+    }
+
+    .product-page-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 70px;
+      align-items: start;
+    }
+
+    /* MAIN IMAGE */
+
+    .main-product-image {
+      position: relative;
+      overflow: hidden;
+
+      background: #ffffff;
+
+      border: 1px solid #dce1e8;
+      border-radius: 20px;
+    }
+
+    .main-product-image img {
+      display: block;
+
+      width: 100%;
+      aspect-ratio: 1 / 1;
+
+      object-fit: contain;
+
+      background: white;
+    }
+
+    /* ARROWS */
+
+    .gallery-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+
+      width: 48px;
+      height: 48px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 0;
+
+      border: 1px solid rgba(0, 0, 0, 0.12);
+      border-radius: 50%;
+
+      background: rgba(255, 255, 255, 0.92);
+      color: #111827;
+
+      font-size: 34px;
+      line-height: 1;
+
+      cursor: pointer;
+
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+
+      transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+    }
+
+    .gallery-arrow:hover {
+      background: #ffffff;
+      transform: translateY(-50%) scale(1.06);
+    }
+
+    .gallery-arrow-left {
+      left: 18px;
+    }
+
+    .gallery-arrow-right {
+      right: 18px;
+    }
+
+    /* THUMBNAILS */
+
+    .product-thumbnails {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+
+      margin-top: 14px;
+    }
+
+    .product-thumbnails img {
+      display: block;
+
+      width: 100%;
+      aspect-ratio: 1 / 1;
+
+      object-fit: cover;
+
+      background: white;
+
+      border: 2px solid transparent;
+      border-radius: 12px;
+
+      cursor: pointer;
+
+      transition:
+        border-color 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    .product-thumbnails img:hover {
+      transform: translateY(-2px);
+    }
+
+    .product-thumbnails img.active-thumbnail {
+      border-color: #14213d;
+    }
+
+    /* PRODUCT INFORMATION */
+
+    .product-details {
+      position: sticky;
+      top: 110px;
+    }
+
+    .product-details .eyebrow {
+      margin: 0 0 12px;
+
+      color: #667085;
+
+      font-size: 0.75rem;
+      font-weight: 700;
+
+      letter-spacing: 0.14em;
+    }
+
+    .product-details h1 {
+      margin: 0 0 18px;
+
+      color: #14213d;
+
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(2.8rem, 5vw, 4.8rem);
+      line-height: 0.95;
+    }
+
+    .product-page-price {
+      margin: 0 0 25px;
+
+      color: #14213d;
+
+      font-size: 1.7rem;
+      font-weight: 700;
+    }
+
+    .product-page-description {
+      margin-bottom: 32px;
+
+      color: #667085;
+
+      line-height: 1.8;
+    }
+
+    /* SPECS */
+
+    .product-specs {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+
+      margin-bottom: 34px;
+
+      border-top: 1px solid #dce1e8;
+      border-left: 1px solid #dce1e8;
+    }
+
+    .product-specs div {
+      padding: 18px;
+
+      border-right: 1px solid #dce1e8;
+      border-bottom: 1px solid #dce1e8;
+
+      background: rgba(255, 255, 255, 0.5);
+    }
+
+    .product-specs span {
+      display: block;
+
+      margin-bottom: 6px;
+
+      color: #667085;
+
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .product-specs strong {
+      color: #14213d;
+    }
+
+    /* DESCRIPTION */
+
+    .product-notes {
+      margin-bottom: 30px;
+    }
+
+    .product-notes h2 {
+      margin-bottom: 10px;
+
+      color: #14213d;
+
+      font-family: "Cormorant Garamond", serif;
+      font-size: 2rem;
+    }
+
+    .product-notes p {
+      color: #667085;
+      line-height: 1.7;
+    }
+
+    /* BUY BUTTON */
+
+    .product-buy-button {
+      width: 100%;
+
+      padding: 17px 24px;
+
+      border: 0;
+      border-radius: 999px;
+
+      background: #14213d;
+      color: white;
+
+      font-size: 1rem;
+      font-weight: 700;
+
+      cursor: pointer;
+
+      transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+    }
+
+    .product-buy-button:hover {
+      transform: translateY(-1px);
+      opacity: 0.92;
+    }
+
+    .product-buy-note {
+      margin: 11px 0 25px;
+
+      color: #8a94a3;
+
+      font-size: 0.78rem;
+      text-align: center;
+    }
+
+    .back-to-shop {
+      color: #14213d;
+
+      font-size: 0.9rem;
+      font-weight: 600;
+
+      text-decoration: none;
+    }
+
+    .back-to-shop:hover {
+      text-decoration: underline;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 900px) {
+
+      .product-page-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .product-details {
+        position: static;
+      }
+
+    }
+
+    @media (max-width: 600px) {
+
+      .product-page-section {
+        padding: 40px 0 70px;
+      }
+
+      .gallery-arrow {
+        width: 42px;
+        height: 42px;
+
+        font-size: 30px;
+      }
+
+      .gallery-arrow-left {
+        left: 10px;
+      }
+
+      .gallery-arrow-right {
+        right: 10px;
+      }
+
+      .product-specs {
+        grid-template-columns: 1fr;
+      }
+
+    }
+  </style>
+
+</head>
+
+
+<body class="product-page">
+
+
+  <!-- HEADER -->
+
+  <header class="site-header">
+
+    <div class="container nav-wrap">
+
+      <a class="brand" href="index.html">
+
+        <span class="brand-mark">
+          CCB
+        </span>
+
+        <span class="brand-copy">
+          <strong>C.C.B</strong>
+          <small>Custom Car Badges</small>
+        </span>
+
+      </a>
+
+
+      <nav class="main-nav">
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="shop.html">
+          Shop
+        </a>
+
+        <a href="design.html">
+          Design Studio
+        </a>
+
+        <a
+          href="index.html#contact"
+          class="nav-cta"
+        >
+          Contact
+        </a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <!-- PRODUCT -->
+
+  <main>
+
+    <section class="product-page-section">
+
+      <div class="container product-page-grid">
+
+
+        <!-- PHOTOS -->
+
+        <div class="product-gallery">
+
+
+          <div class="main-product-image">
+
+            <button
+              class="gallery-arrow gallery-arrow-left"
+              type="button"
+              onclick="previousProductImage()"
+              aria-label="Previous product image"
+            >
+              ‹
+            </button>
+
+
+            <img
+              id="main-product-photo"
+              src="images/1.JPG"
+              alt="ADAC Deutschland car grille badge"
+            >
+
+
+            <button
+              class="gallery-arrow gallery-arrow-right"
+              type="button"
+              onclick="nextProductImage()"
+              aria-label="Next product image"
+            >
+              ›
+            </button>
+
+          </div>
+
+
+          <!-- SMALL PHOTOS -->
+
+    <div class="product-thumbnails">
+
+  <img
+    src="images/1.JPG"
+    alt="ADAC Deutschland badge front view"
+    class="active-thumbnail"
+    onclick="selectProductImage(0)"
+  >
+
+  <img
+    src="images/3.JPG"
+    alt="ADAC Deutschland badge additional view"
+    onclick="selectProductImage(1)"
+  >
+
+</div>
+
+        </div>
+
+
+        <!-- PRODUCT INFORMATION -->
+
+        <div class="product-details">
+
+
+          <p class="eyebrow">
+            AVAILABLE BADGE
+          </p>
+
+
+          <h1>
+            ADAC Deutschland Car Grille Badge
+          </h1>
+
+
+          <p class="product-page-price">
+            £52.70
+          </p>
+
+
+          <p class="product-page-description">
+            ADAC Deutschland car grille badge featuring the
+            distinctive German eagle design. A striking badge
+            for classic cars, collector vehicles and automotive
+            enthusiasts.
+          </p>
+
+
+          <!-- PRODUCT SPECS -->
+
+          <div class="product-specs">
+
+            <div>
+              <span>Condition</span>
+              <strong>New</strong>
+            </div>
+
+            <div>
+              <span>Availability</span>
+              <strong>In Stock</strong>
+            </div>
+
+            <div>
+              <span>Type</span>
+              <strong>Car Grille Badge</strong>
+            </div>
+
+            <div>
+              <span>Design</span>
+              <strong>ADAC Deutschland</strong>
+            </div>
+
+          </div>
+
+
+          <!-- ABOUT -->
+
+          <div class="product-notes">
+
+            <h2>
+              About this badge
+            </h2>
+
+            <p>
+              A classic-style ADAC Deutschland grille badge
+              featuring a silver finish and German eagle motif.
+              Designed as a distinctive finishing detail for
+              classic and enthusiast vehicles.
+            </p>
+
+            <p>
+              Browse through the photographs for a closer look
+              at the badge, detailing and finish.
+            </p>
+
+          </div>
+
+
+          <!-- PURCHASE -->
+
+          <button
+            class="product-buy-button"
+            type="button"
+          >
+            Buy Now — £52.70
+          </button>
+
+
+          <p class="product-buy-note">
+            Secure online checkout will be available soon.
+          </p>
+
+
+          <a
+            href="shop.html"
+            class="back-to-shop"
+          >
+            ← Back to Shop
+          </a>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer class="site-footer">
+
+    <div class="container footer-row">
+
+      <div>
+
+        <strong>
+          C.C.B
+        </strong>
+
+        <p>
+          Custom Car Badges
+        </p>
+
+      </div>
+
+
+      <div class="footer-right">
+
+        <a href="shop.html">
+          Shop
+        </a>
+
+        <a href="index.html#contact">
+          Contact
+        </a>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- IMAGE GALLERY -->
+
+  <script>
+
+    const productImages = [
+      "images/1.JPG",
+    
+      "images/3.JPG"
+    ];
+
+
+    let currentImageIndex = 0;
+
+
+    const mainProductPhoto =
+      document.getElementById("main-product-photo");
+
+
+    const thumbnails =
+      document.querySelectorAll(".product-thumbnails img");
+
+
+    function showProductImage(index) {
+
+      currentImageIndex = index;
+
+      mainProductPhoto.src =
+        productImages[currentImageIndex];
+
+
+      thumbnails.forEach((thumbnail, thumbnailIndex) => {
+
+        if (thumbnailIndex === currentImageIndex) {
+
+          thumbnail.classList.add("active-thumbnail");
+
+        } else {
+
+          thumbnail.classList.remove("active-thumbnail");
+
+        }
+
+      });
+
+    }
+
+
+    function nextProductImage() {
+
+      currentImageIndex++;
+
+      if (currentImageIndex >= productImages.length) {
+        currentImageIndex = 0;
+      }
+
+      showProductImage(currentImageIndex);
+
+    }
+
+
+    function previousProductImage() {
+
+      currentImageIndex--;
+
+      if (currentImageIndex < 0) {
+        currentImageIndex = productImages.length - 1;
+      }
+
+      showProductImage(currentImageIndex);
+
+    }
+
+
+    function selectProductImage(index) {
+
+      showProductImage(index);
+
+    }
+
+  </script>
+
+
+</body>
+
+</html>

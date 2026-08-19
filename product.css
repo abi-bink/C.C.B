@@ -1,0 +1,199 @@
+.product-page-section {
+  padding: 70px 0 110px;
+  background: #f6f7f9;
+  color: #111827;
+  min-height: 80vh;
+}
+
+.product-page-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 70px;
+  align-items: start;
+}
+
+.product-photo-coming {
+  min-height: 560px;
+
+  display: grid;
+  place-items: center;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(201, 168, 106, 0.12),
+      transparent 40%
+    ),
+    #e9edf2;
+
+  border: 1px solid #dce1e8;
+  border-radius: 20px;
+
+  color: #667085;
+
+  font-weight: 600;
+}
+
+.product-details {
+  position: sticky;
+  top: 110px;
+}
+
+.product-details .eyebrow {
+  margin: 0 0 12px;
+
+  color: #667085;
+
+  font-size: 0.75rem;
+  font-weight: 700;
+
+  letter-spacing: 0.14em;
+}
+
+.product-details h1 {
+  margin: 0 0 18px;
+
+  color: #14213d;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(2.8rem, 5vw, 4.8rem);
+
+  line-height: 0.95;
+}
+
+.product-page-price {
+  margin: 0 0 25px;
+
+  color: #14213d;
+
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+
+.product-page-description {
+  margin-bottom: 32px;
+
+  color: #667085;
+
+  line-height: 1.8;
+}
+
+.product-specs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  margin-bottom: 34px;
+
+  border-top: 1px solid #dce1e8;
+  border-left: 1px solid #dce1e8;
+}
+
+.product-specs div {
+  padding: 18px;
+
+  border-right: 1px solid #dce1e8;
+  border-bottom: 1px solid #dce1e8;
+
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.product-specs span {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #667085;
+
+  font-size: 0.72rem;
+
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.product-specs strong {
+  color: #14213d;
+}
+
+.product-notes {
+  margin-bottom: 30px;
+}
+
+.product-notes h2 {
+  margin-bottom: 10px;
+
+  color: #14213d;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 2rem;
+}
+
+.product-notes p {
+  color: #667085;
+  line-height: 1.7;
+}
+
+.product-buy-button {
+  width: 100%;
+
+  padding: 17px 24px;
+
+  border: 0;
+  border-radius: 999px;
+
+  background: #14213d;
+  color: white;
+
+  font-size: 1rem;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.product-buy-note {
+  margin: 11px 0 25px;
+
+  color: #8a94a3;
+
+  font-size: 0.78rem;
+
+  text-align: center;
+}
+
+.back-to-shop {
+  color: #14213d;
+
+  font-size: 0.9rem;
+  font-weight: 600;
+
+  text-decoration: none;
+}
+
+@media (max-width: 900px) {
+
+  .product-page-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-details {
+    position: static;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .product-page-section {
+    padding: 40px 0 70px;
+  }
+
+  .product-photo-coming {
+    min-height: 400px;
+  }
+
+  .product-specs {
+    grid-template-columns: 1fr;
+  }
+
+}
